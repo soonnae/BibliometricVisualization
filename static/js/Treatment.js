@@ -80,7 +80,7 @@ function setCookie(name, value, hours, path) {
     expires.setTime(expires.getTime() + hours * 3600000);
     path = path == "" ? "" : ";path=" + path;
     _expires = (typeof hours) == "string" ? "" : ";expires=" + expires.toUTCString();
-    document.cookie = name + "=" + value + _expires + path;
+    document.cookie = name + "=" + value + _expires + path + ";secure";
 }
 //cookie名获取值  
 function getCookieValue(name) {
@@ -99,4 +99,4 @@ function getCookieValue(name) {
         return unescape(value);       //对它解码           
     }
     else return "-1";    //搜索失败，返回-1  
-}    
+}
